@@ -1,0 +1,20 @@
+body {
+    background-image: url(img/header.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 500vh;
+}
+
+.page {
+    height: 100vh;
+    background-color: #333;
+}
+
+.head {
+    background-color: rgba(0, 0, 0, 0);
+}
