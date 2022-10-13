@@ -159,6 +159,7 @@ img {
     color: #eee;
     margin-right: -0.4em;
     margin-bottom: 0.2em;
+    opacity: 0.3;
 }
 
 .previous span {
@@ -166,7 +167,7 @@ img {
     color: #eee;
     margin-left: 0.4em;
     margin-bottom: 0.2em;
-
+    opacity: 0.3;
 }
 
 .next {
@@ -178,14 +179,10 @@ img {
     writing-mode: vertical-rl;
     transform: scale(-1);
     border-radius: 0 0 8vh 8vh;
-    transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear, opacity 0.5s;
     position: absolute;
     bottom: 0px;
     margin-right: 0.4em;
-}
-
-.next:hover {
-    background-color: rgb(65, 65, 65);
 }
 
 .previous {
@@ -196,16 +193,16 @@ img {
     align-items: center;
     writing-mode: vertical-rl;
     border-radius: 0 0 8vh 8vh;
-    transition: background-color 0.2s linear;
-    transition: opacity 0.5s;
+    transition: background-color 0.2s linear, opacity 0.5s;
     position: absolute;
     top: 0px;
-}
 
-.previous:hover {
-    background-color: rgb(173, 0, 0);
 }
 
 .transparent {
-    opacity: 1;
+    opacity: 0;
+}
+
+.dissapear {
+    display: none;
 }
