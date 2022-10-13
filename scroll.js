@@ -64,11 +64,15 @@ function dissapear() {
 function appear() {
     if (currentPage != 0) {
         prev.classList.remove('dissapear');
-        prev.classList.remove('transparent');
+        setTimeout(() => {
+            prev.classList.remove('transparent');
+        }, 100);
     }
     if (currentPage != 4) {
         next.classList.remove('dissapear');
-        next.classList.remove('transparent');
+        setTimeout(() => {
+            next.classList.remove('transparent');
+        }, 100);
     }
 }
 
@@ -81,7 +85,7 @@ next.addEventListener('click', () => {
         }, 450)
         setTimeout(() => {
             appear()
-        }, 900)
+        }, 950)
 }, false);
 
 prev.addEventListener('click', () => {
@@ -93,5 +97,5 @@ prev.addEventListener('click', () => {
         }, 450)
         setTimeout(function () {
             appear()
-    }, 900)
+    }, 950)
 }, false)
