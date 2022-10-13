@@ -1,6 +1,8 @@
 const pages = document.querySelectorAll('.page');
 const next = document.querySelector('.next')
 const prev = document.querySelector('.previous')
+const scrollUp = document.querySelector('.scrollUp')
+const scrollDown = document.querySelector('.scrollDown')
 let currentPage = 0;
 
 
@@ -22,21 +24,25 @@ function getBackgroundColor() {
 next.addEventListener('mouseenter', () => {
     if (currentPage != 4) {
         next.style.backgroundColor = getBackgroundColor();
+        scrollDown.style.opacity = '1';
     }
 
 })
 next.addEventListener('mouseleave', () => {
     next.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    scrollDown.style.opacity = '0.3';
 })
 
 prev.addEventListener('mouseenter', () => {
     if (currentPage != 0) {
         prev.style.backgroundColor = getBackgroundColor();
+        scrollUp.style.opacity = '1';
     }
 
 })
 prev.addEventListener('mouseleave', () => {
     prev.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    scrollUp.style.opacity = '0.3';
 })
 
 function toggleOpacity() {

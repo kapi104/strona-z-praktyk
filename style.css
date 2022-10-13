@@ -160,6 +160,7 @@ img {
     margin-right: -0.4em;
     margin-bottom: 0.2em;
     opacity: 0.3;
+    transition: opacity 0.35s;
 }
 
 .previous span {
@@ -168,6 +169,7 @@ img {
     margin-left: 0.4em;
     margin-bottom: 0.2em;
     opacity: 0.3;
+    transition: opacity 0.35s;
 }
 
 .next {
