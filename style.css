@@ -197,10 +197,15 @@ img {
     writing-mode: vertical-rl;
     border-radius: 0 0 8vh 8vh;
     transition: background-color 0.2s linear;
+    transition: opacity 0.5s;
     position: absolute;
     top: 0px;
 }
 
 .previous:hover {
     background-color: rgb(173, 0, 0);
+}
+
+.transparent {
+    opacity: 1;
 }
