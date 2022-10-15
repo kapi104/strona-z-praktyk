@@ -11,11 +11,11 @@ function scrollTo() {
     return;
 }
 
-function getBackgroundColor() {
-    if (currentPage == 0) {
+function getBackgroundColor(page) {
+    if (page == 0) {
         return color = 'rgb(73, 73, 73)';
     } else {
-        let tab = document.querySelector(`.tab${currentPage}`)
+        let tab = document.querySelector(`.tab${page}`)
         let color = window.getComputedStyle(tab).backgroundColor;
         return color;
     }
@@ -23,7 +23,7 @@ function getBackgroundColor() {
 
 next.addEventListener('mouseenter', () => {
     if (currentPage != 4) {
-        next.style.backgroundColor = getBackgroundColor();
+        next.style.backgroundColor = getBackgroundColor(currentPage);
         scrollDown.style.opacity = '1';
     }
 
@@ -35,7 +35,7 @@ next.addEventListener('mouseleave', () => {
 
 prev.addEventListener('mouseenter', () => {
     if (currentPage != 0) {
-        prev.style.backgroundColor = getBackgroundColor();
+        prev.style.backgroundColor = getBackgroundColor(currentPage);
         scrollUp.style.opacity = '1';
     }
 
