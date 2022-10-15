@@ -29,6 +29,7 @@ body {
     margin-top: 2%;
     margin-bottom: 2%;
     text-align: center;
+    z-index: 7;
 }
 
 .head {
@@ -64,6 +65,8 @@ h2 {
     align-items: center;
 }
 
+
+
 .pr {
     justify-content: flex-end;
     align-items: center;
@@ -73,6 +76,9 @@ h2 {
     height: 80vh;
     width: 80vw;
     display: flex;
+    transition: transform 1s;
+    z-index: 2;
+    transition: height 1s, width 1s, border-radius 1s;
 }
 
 .tabl {
@@ -119,19 +125,23 @@ h2 {
 
 .content {
     width: 90%;
-    z-index: 3;
+    z-index: 7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-wrap {
-    height: 70%;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
-    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .tabl .arrow {
@@ -144,13 +154,13 @@ img {
 
 .arrow {
     width: 10%;
-    font-size: 7em;
+    font-size: 10vh;
     color: #eee;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s;
-    z-index: 3;
+    transition: transform 1s;
+    z-index: 7;
 }
 
 .next span {
@@ -184,6 +194,7 @@ img {
     position: absolute;
     bottom: 0px;
     margin-right: 0.4em;
+    z-index: 1;
 }
 
 .previous {
@@ -197,6 +208,7 @@ img {
     transition: background-color 0.2s linear, opacity 0.5s;
     position: absolute;
     top: 0px;
+    z-index: 1;
 
 }
 
@@ -215,9 +227,8 @@ img {
     display: block;
     height: inherit;
     width: inherit;
-    background-color: rgb(169, 0, 0);
     left: -100%;
-    z-index: 2;
+    z-index: 5;
     content: ' ';
     transition: transform 0.5s;
     border-radius: 0 30px 30px 0;
@@ -229,8 +240,38 @@ img {
     height: inherit;
     width: inherit;
     left: 100%;
-    z-index: 2;
+    z-index: 5;
     content: ' ';
     transition: transform 0.5s;
     border-radius: 30px 0 0 30px;
+}
+
+.enlarge {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+}
+
+.enlarge h1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.reverse {
+    transform: scale(-1);
+}
+
+.tabHeader {
+    margin: 0;
+    color: #eee;
+    font-size: 6vh;
+    width: 10%;
+    font-weight: 700;
+    z-index: 7;
+    writing-mode:vertical-lr;
+    text-orientation: upright;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
