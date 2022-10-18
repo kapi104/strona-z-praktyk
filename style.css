@@ -129,6 +129,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .img-wrap {
@@ -137,6 +138,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: visible;
 }
 
 img {
@@ -259,7 +262,7 @@ img {
 }
 
 .reverse {
-    transform: scale(-1);
+    transform: rotate(180deg);
 }
 
 .tabHeader {
@@ -269,13 +272,54 @@ img {
     width: 10%;
     font-weight: 700;
     z-index: 7;
-    writing-mode:vertical-lr;
+    writing-mode: vertical-lr;
     text-orientation: upright;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.delBorderRadius {
-    border-radius: 0px;
+.currentImg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.prevImgBtn,
+.nextImgBtn {
+    width: 14%;
+    color: rgba(238, 238, 238, 0.8);
+    font-size: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prevImgBtn span,
+.nextImgBtn span {
+    background-color: rgba(51, 51, 51, 0.4);
+    border-radius: 50%;
+    transition: opacity 0.5s;
+}
+
+.prevImgBtn span {
+        padding: 0 1.4vw 2vh 1.3vw;
+}
+
+.nextImgBtn span {
+    padding: 0 1.3vw 2vh 1.4vw;
+}
+
+.nextImgAnimation {
+    animation: nextImg 5s both;
+}
+
+@keyframes nextImg {
+    0% {
+        transform: rotateZ(90deg) scale(0.5);
+    }
+
+    100% {
+        transform: rotateZ(0deg) scale(1);
+    }
 }

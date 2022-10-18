@@ -1,6 +1,9 @@
 const arrowl = document.querySelectorAll('.arrowl');
 const arrowr = document.querySelectorAll('.arrowr');
-const tabs = document.querySelectorAll('.tab')
+const tabs = document.querySelectorAll('.tab');
+const prevImgArrows = document.querySelectorAll('.prevImgBtn')
+const nextImgArrows = document.querySelectorAll('.nextImgBtn')
+const arrowSpans = document.querySelectorAll('.imgBtnSpan');
 let styleElement = document.head.appendChild(document.createElement("style"));
 let bcgColor;
 
@@ -52,9 +55,11 @@ arrowl.forEach((arrow) => {
             if (!tabs[currentPage - 1].classList.contains('enlarge')) {
                 tabs[currentPage - 1].classList.add('enlarge');
                 arrow.classList.add('reverse');
+                arrowsAppear();
             } else {
                 tabs[currentPage - 1].classList.remove('enlarge');
                 arrow.classList.remove('reverse');
+                arrowsDisappear();
             }
         }, 200);
     })
@@ -67,13 +72,39 @@ arrowr.forEach((arrow) => {
             if (!tabs[currentPage - 1].classList.contains('enlarge')) {
                 tabs[currentPage - 1].classList.add('enlarge');
                 arrow.classList.add('reverse');
+                arrowsAppear();
             } else {
                 tabs[currentPage - 1].classList.remove('enlarge');
                 arrow.classList.remove('reverse');
+                arrowsDisappear();
             }
         }, 200);
     })
 })
+
+function arrowsAppear() {
+    arrowSpans.forEach((arrow) => {
+        arrow.classList.remove('dissapear');
+        arrow.classList.remove('dissapear');
+        setTimeout(() => {
+            arrow.classList.remove('transparent');
+            arrow.classList.remove('transparent');
+        }, 200);
+    })
+    return
+}
+
+function arrowsDisappear() {
+    arrowSpans.forEach((arrow) => {
+        arrow.classList.add('transparent');
+        arrow.classList.add('transparent');
+        setTimeout(() => {
+            arrow.classList.add('dissapear');
+            arrow.classList.add('dissapear');
+        }, 200);
+    })
+    return
+}
 
 function slideOutRight() {
     if (currentPage == 4) {
