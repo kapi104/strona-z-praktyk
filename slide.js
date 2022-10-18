@@ -8,11 +8,14 @@ let bcgColor;
 
 arrowl.forEach((slide) => {
     slide.addEventListener('mouseenter', () => {
-        if (!slide.classList.contains('enlarge')) {
-            bcgColor = getBackgroundColor(currentPage + 1);
-            styleElement.innerHTML = `.tabl::before {transform: translateX(100%);
-            background-color: ${bcgColor};}`;
+        bcgColor = getBackgroundColor(currentPage + 1);
+        let text = `.tabl::before {transform: translateX(100%);
+            background-color: ${bcgColor};`;
+        if (slide.classList.contains('reverse')) {
+            text = `.tabl::before {transform: translateX(100%);
+            background-color: ${bcgColor}; border-radius: 0px;`;
         }
+        styleElement.innerHTML = text + '}';
     });
 
     slide.addEventListener('mouseleave', () => {
@@ -22,15 +25,18 @@ arrowl.forEach((slide) => {
 
 arrowr.forEach((slide) => {
     slide.addEventListener('mouseenter', () => {
-        if (!slide.classList.contains('enlarge')) {
-            if (currentPage == 4) {
-                bcgColor = getBackgroundColor('1');
-            } else {
-                bcgColor = getBackgroundColor(currentPage + 1);
-            }
-            styleElement.innerHTML = `.tabr::after {transform: translateX(-100%);
-            background-color: ${bcgColor};}`;
+        if (currentPage == 4) {
+            bcgColor = getBackgroundColor('1');
+        } else {
+            bcgColor = getBackgroundColor(currentPage + 1);
         }
+        let text = `.tabr::after {transform: translateX(-100%);
+            background-color: ${bcgColor};`;
+        if (slide.classList.contains('reverse')) {
+            text = `.tabr::after {transform: translateX(-100%);
+            background-color: ${bcgColor}; border-radius: 0px;`;
+        }
+        styleElement.innerHTML = text + '}';
     });
 
     slide.addEventListener('mouseleave', () => {
@@ -61,7 +67,7 @@ arrowr.forEach((arrow) => {
             if (!tabs[currentPage - 1].classList.contains('enlarge')) {
                 tabs[currentPage - 1].classList.add('enlarge');
                 arrow.classList.add('reverse');
-            }else {
+            } else {
                 tabs[currentPage - 1].classList.remove('enlarge');
                 arrow.classList.remove('reverse');
             }

@@ -133,7 +133,7 @@ h2 {
 
 .img-wrap {
     height: 100%;
-    width: 70%;
+    width: 72%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -230,7 +230,7 @@ img {
     left: -100%;
     z-index: 5;
     content: ' ';
-    transition: transform 0.5s;
+    transition: transform 0.5s, border-radius 0.5s;
     border-radius: 0 30px 30px 0;
 }
 
@@ -242,7 +242,7 @@ img {
     left: 100%;
     z-index: 5;
     content: ' ';
-    transition: transform 0.5s;
+    transition: transform 0.5s, border-radius 0.5s;
     border-radius: 30px 0 0 30px;
 }
 
@@ -274,4 +274,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.delBorderRadius {
+    border-radius: 0px;
 }
